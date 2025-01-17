@@ -102,6 +102,7 @@ const logoutUser = async (req, res) => {
         )
         return res
             .status(201)
+            .clearCookie("chatBotToken", options)
             .json({ success: true, data: null, message: "Logout successfull" })
 
     } catch (error) {
